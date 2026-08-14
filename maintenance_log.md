@@ -71,3 +71,6 @@ System initialized: 2026-03-12
 - 2026-06-22 02:53:56: Incremental Sync -- 400 new rows (ceiling: 2026-06-22)
 - 2026-06-22 02:59:19: Incremental Sync -- 400 new rows (ceiling: 2026-06-22)
 - 2026-06-22 11:16:14: Incremental Sync -- 0 new rows (ceiling: 2026-06-22)
+- 2026-08-14 00:12:40: Incremental Sync -- 0 new rows (ceiling: 2026-08-14)
+- 2026-08-14 17:15:00: Incremental Sync -- 157 new rows (ceiling: 2026-08-14)
+- 2026-08-14 17:16:22: Incremental Sync -- 151 new rows (ceiling: 2026-08-14)
