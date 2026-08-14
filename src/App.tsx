@@ -440,7 +440,7 @@ export default function App() {
 
         // Calculate Populations
         const populations = { bbk: 0, jtp: 0 };
-        farmData?.forEach(farm => {
+        filteredFarmData.forEach(farm => {
           const farmPop = farm.kandang?.reduce((sum: number, k: any) => sum + (k.populasi || 0), 0) || 0;
           if (farm.name.includes('BBK')) populations.bbk += farmPop;
           else if (farm.name.includes('JTP')) populations.jtp += farmPop;
