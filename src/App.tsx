@@ -1081,14 +1081,7 @@ export default function App() {
                             activeTab === 'ai' ? 'Pusat Kecerdasan' : 'Analisis Produksi'}
 
                   </h2>
-                  <p style={{ color: 'var(--muted-foreground)' }}>
-                    {activeTab === 'overview' ? 'Kecerdasan produksi real-time dan analisis gap.' :
-                      activeTab === 'farms' ? 'Inventaris dan populasi per unit kandang.' :
-                        activeTab === 'gaps' ? '' :
-                          activeTab === 'comparison' ? 'Analisis produksi berdampingan.' :
-                            activeTab === 'ai' ? 'Model multi-modal canggih untuk wawasan peternakan.' : 'Model statistik dan prakiraan tren.'}
 
-                  </p>
                 </div>
                 {/* Removed manual Refresh component since data is synced automatically at midnight */}
               </header>

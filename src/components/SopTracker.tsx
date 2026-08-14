@@ -131,9 +131,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
         <h2 style={{ fontSize: '2rem', fontWeight: 700, margin: '0 0 0.25rem 0', letterSpacing: '-0.02em' }}>
           Pelacak SOP Operator
         </h2>
-        <p style={{ color: 'var(--muted-foreground)', margin: 0 }}>
-          Kelola prosedur operasi standar dan lacak performa operator
-        </p>
+
       </div>
 
       {/* Tabs */}
