@@ -22,13 +22,17 @@ interface HDDataRow {
   hd_d1: number | null; // e.g. HD D-0 / Today
 }
 
-export function HDPerformanceTable() {
+interface HDPerformanceTableProps {
+  farms: any[];
+}
+
+export function HDPerformanceTable({ farms }: HDPerformanceTableProps) {
   const [data, setData] = useState<HDDataRow[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [farms]);
 
   async function fetchData() {
     try {
@@ -38,9 +42,14 @@ export function HDPerformanceTable() {
       
       if (!kandangData) return;
 
+      const allowedKandangIds = new Set(
+        farms.flatMap(f => (f.kandang || []).map((k: any) => k.id))
+      );
+      const filteredKandangData = kandangData.filter(k => allowedKandangIds.has(k.id));
+
       const rows: HDDataRow[] = [];
 
-      for (const k of kandangData) {
+      for (const k of filteredKandangData) {
         const farmName = (k.farms as any)?.name || 'Unknown';
         const kandangName = k.name;
 

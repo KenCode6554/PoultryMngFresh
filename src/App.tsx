@@ -345,12 +345,55 @@ export default function App() {
         if (page.length < PAGE_SIZE) break; // last page
         from += PAGE_SIZE;
       }
-      const production = allProduction;
+      // Customization: Filter down to top 2 units per farm based on average HD%
+      let filteredFarmData: any[] = [];
+      let production = allProduction;
 
       // 2. Fetch Farms
       const { data: farmData } = await supabase
         .from('farms')
         .select('*, kandang(*)');
+
+      if (allProduction && farmData) {
+        // Calculate average HD% for each kandang
+        const kandangHdSum: Record<string, number> = {};
+        const kandangHdCount: Record<string, number> = {};
+        allProduction.forEach(r => {
+          if (r.kandang_id && r.hd_actual != null && r.hd_actual !== 0) {
+            kandangHdSum[r.kandang_id] = (kandangHdSum[r.kandang_id] || 0) + Number(r.hd_actual);
+            kandangHdCount[r.kandang_id] = (kandangHdCount[r.kandang_id] || 0) + 1;
+          }
+        });
+
+        const kandangAvgHd: Record<string, number> = {};
+        Object.keys(kandangHdSum).forEach(kid => {
+          kandangAvgHd[kid] = kandangHdSum[kid] / kandangHdCount[kid];
+        });
+
+        // Filter farms to only keep top 2 kandangs
+        filteredFarmData = farmData.map(farm => {
+          const sortedKandangs = [...(farm.kandang || [])].sort((a, b) => {
+            const avgA = kandangAvgHd[a.id] || 0;
+            const avgB = kandangAvgHd[b.id] || 0;
+            return avgB - avgA;
+          });
+          return {
+            ...farm,
+            kandang: sortedKandangs.slice(0, 2)
+          };
+        });
+
+        // Get allowed kandang IDs
+        const allowedKandangIds = new Set<string>();
+        filteredFarmData.forEach(farm => {
+          farm.kandang?.forEach((k: any) => {
+            allowedKandangIds.add(k.id);
+          });
+        });
+
+        // Filter production records to only allowed ones
+        production = allProduction.filter(row => allowedKandangIds.has(row.kandang_id));
+      }
 
       if (production) {
         // Single-pass aggregation for all 5 chart metrics
@@ -421,7 +464,7 @@ export default function App() {
         setGaps(computedGaps);
       }
 
-      if (farmData) setFarms(farmData);
+      setFarms(filteredFarmData);
 
     } catch (error) {
       console.error('Error fetching dashboard data:', error);
@@ -608,7 +651,7 @@ export default function App() {
               );
             })()}
 
-            <HDPerformanceTable />
+            <HDPerformanceTable farms={farms} />
           </div>
         );
 
