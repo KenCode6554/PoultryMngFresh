@@ -1074,7 +1074,7 @@ export default function App() {
               <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem' }}>
                 <div>
                   <h2 style={{ fontSize: '1.875rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-                    {activeTab === 'overview' ? 'Dasbor Eksekutif' :
+                    {activeTab === 'overview' ? 'Dashboard Eksekutif' :
                       activeTab === 'farms' ? 'Manajemen Peternakan' :
                         activeTab === 'gaps' ? 'Peringatan Performa' :
                           activeTab === 'comparison' ? 'Perbandingan Unit' :
