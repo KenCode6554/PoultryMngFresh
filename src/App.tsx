@@ -1084,7 +1084,7 @@ export default function App() {
                   <p style={{ color: 'var(--muted-foreground)' }}>
                     {activeTab === 'overview' ? 'Real-time production intelligence and gap analysis.' :
                       activeTab === 'farms' ? 'Inventory and population per kandang unit.' :
-                        activeTab === 'gaps' ? 'Critical deviations detected by AI engine.' :
+                        activeTab === 'gaps' ? '' :
                           activeTab === 'comparison' ? 'Side-by-side production analysis.' :
                             activeTab === 'ai' ? 'Advanced multi-modal model for farm insights.' : 'Statistical models and trend forecasting.'}
 
