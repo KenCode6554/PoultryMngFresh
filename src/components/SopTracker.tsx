@@ -129,19 +129,19 @@ export function SopTracker({ farms }: SopTrackerProps) {
       <div style={{ marginBottom: '2rem' }}>
 
         <h2 style={{ fontSize: '2rem', fontWeight: 700, margin: '0 0 0.25rem 0', letterSpacing: '-0.02em' }}>
-          Operator SOP Tracker
+          Pelacak SOP Operator
         </h2>
         <p style={{ color: 'var(--muted-foreground)', margin: 0 }}>
-          Manage standard operating procedures and track operator performance
+          Kelola prosedur operasi standar dan lacak performa operator
         </p>
       </div>
 
       {/* Tabs */}
       <div style={{ display: 'flex', borderBottom: '1px solid var(--border)', marginBottom: '2rem' }}>
-        <TabButton id="overview" label="Overview" icon={ClipboardList} />
-        <TabButton id="daily" label="Daily Checklist" icon={ClipboardCheck} />
-        <TabButton id="builder" label="SOP Builder" icon={Settings} />
-        <TabButton id="performance" label="Performance" icon={BarChart2} />
+        <TabButton id="overview" label="Ringkasan" icon={ClipboardList} />
+        <TabButton id="daily" label="Daftar Periksa Harian" icon={ClipboardCheck} />
+        <TabButton id="builder" label="Pembuat SOP" icon={Settings} />
+        <TabButton id="performance" label="Performa" icon={BarChart2} />
       </div>
 
       {/* Content Area */}
@@ -152,29 +152,29 @@ export function SopTracker({ farms }: SopTrackerProps) {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
               <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600 }}>Active SOPs</span>
+                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600 }}>SOP Aktif</span>
                   <div style={{ backgroundColor: 'rgba(191, 245, 73, 0.1)', padding: '0.4rem', borderRadius: '6px' }}>
                     <FileText size={16} color="var(--primary)" />
                   </div>
                 </div>
                 <div style={{ fontSize: '2rem', fontWeight: 700, lineHeight: 1 }}>{stats.activeSops}</div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>Templates configured</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>Templat dikonfigurasi</div>
               </div>
               
               <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600 }}>Operators</span>
+                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600 }}>Operator</span>
                   <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', padding: '0.4rem', borderRadius: '6px' }}>
                     <Users size={16} color="var(--muted-foreground)" />
                   </div>
                 </div>
                 <div style={{ fontSize: '2rem', fontWeight: 700, lineHeight: 1 }}>{stats.operators}</div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>Active staff</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>Staf aktif</div>
               </div>
 
               <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600 }}>Today's Executions</span>
+                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600 }}>Eksekusi Hari Ini</span>
                   <div style={{ backgroundColor: 'rgba(191, 245, 73, 0.1)', padding: '0.4rem', borderRadius: '6px' }}>
                     <TrendingUp size={16} color="var(--primary)" />
                   </div>
@@ -185,13 +185,13 @@ export function SopTracker({ farms }: SopTrackerProps) {
 
               <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600 }}>Avg. Completion</span>
+                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600 }}>Rata-rata Penyelesaian</span>
                   <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', padding: '0.4rem', borderRadius: '6px' }}>
                     <AlertTriangle size={16} color="var(--muted-foreground)" />
                   </div>
                 </div>
                 <div style={{ fontSize: '2rem', fontWeight: 700, lineHeight: 1 }}>{stats.avgCompletion}%</div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>All time average</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>Rata-rata keseluruhan</div>
               </div>
             </div>
 
@@ -208,8 +208,8 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   <div key={farmName} className="card" style={{ padding: '1.5rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                       <div>
-                        <h4 style={{ margin: 0, fontSize: '1rem', fontWeight: 600 }}>Farm {farmName}</h4>
-                        <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>{runs} executions recorded</span>
+                        <h4 style={{ margin: 0, fontSize: '1rem', fontWeight: 600 }}>Kandang {farmName}</h4>
+                        <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>{runs} eksekusi tercatat</span>
                       </div>
                       <span style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)' }}>{avg}%</span>
                     </div>
@@ -224,16 +224,16 @@ export function SopTracker({ farms }: SopTrackerProps) {
             {/* Recent Executions */}
             <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', minHeight: '300px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 600 }}>Recent SOP Executions</h3>
+                <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 600 }}>Eksekusi SOP Terbaru</h3>
                 <button onClick={() => setActiveTab('daily')} style={{ background: 'none', border: 'none', color: 'var(--primary)', fontSize: '0.875rem', fontWeight: 500, cursor: 'pointer' }}>
-                  Add New →
+                  Tambah Baru →
                 </button>
               </div>
               
               {executions.length === 0 ? (
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--muted-foreground)', gap: '1rem' }}>
                   <ClipboardCheck size={32} opacity={0.5} />
-                  <p style={{ margin: 0, fontSize: '0.875rem' }}>No executions recorded yet.</p>
+                  <p style={{ margin: 0, fontSize: '0.875rem' }}>Belum ada eksekusi yang tercatat.</p>
                   <button 
                     onClick={() => setActiveTab('daily')}
                     style={{
@@ -251,7 +251,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                     }}
                   >
                     <Plus size={16} />
-                    Start First Checklist
+                    Mulai Daftar Periksa Pertama
                   </button>
                 </div>
               ) : (
@@ -279,7 +279,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
 
         {activeTab === 'daily' && !isExecuting && (
           <div className="animate-fade-in" style={{ maxWidth: '800px' }}>
-            <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '1.5rem' }}>Start Daily Checklist</h3>
+            <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '1.5rem' }}>Mulai Daftar Periksa Harian</h3>
             
             {/* Form Container */}
             <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>
@@ -306,13 +306,13 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   {operators.map(op => (
                     <option key={op.id} value={op.id}>{op.name}</option>
                   ))}
-                  <option value="manual">+ Enter manually</option>
+                  <option value="manual">+ Masukkan manual</option>
                 </select>
                 {selectedOperator === 'manual' && (
                   <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem' }}>
                     <input 
                       type="text" 
-                      placeholder="Enter new operator name..."
+                      placeholder="Masukkan nama operator baru..."
                       value={newOperatorName}
                       onChange={e => setNewOperatorName(e.target.value)}
                       style={{ flex: 1, padding: '0.75rem 1rem', backgroundColor: 'rgba(0,0,0,0.2)', border: '1px solid var(--border)', borderRadius: '8px', color: 'white', fontSize: '0.875rem' }}
@@ -332,7 +332,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                       }}
                       style={{ padding: '0.75rem 1rem', backgroundColor: 'var(--primary)', color: '#000', border: 'none', borderRadius: '8px', fontWeight: 600, cursor: 'pointer', fontSize: '0.875rem' }}
                     >
-                      Add
+                      Tambah
                     </button>
                   </div>
                 )}
@@ -342,7 +342,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Calendar size={14} color="var(--primary)" />
-                  Date
+                  Tanggal
                 </label>
                 <input 
                   type="date" 
@@ -362,7 +362,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
             </div>
 
             <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', fontWeight: 600, marginBottom: '1rem' }}>
-              Select SOP Template
+              Pilih Templat SOP
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -385,7 +385,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                     <h4 style={{ margin: 0, fontSize: '1rem', fontWeight: 600 }}>{template.title}</h4>
                     <span style={{ fontSize: '0.8125rem', color: 'var(--muted-foreground)' }}>
-                      {template.title.split(' ')[0]} {template.title.includes('Routine') ? 'Routine' : ''} · {farms.find(f => f.id === template.farm_id)?.name?.replace('Kandang ', '') || 'Unknown'} · {farms.flatMap(f => f.kandang || []).find(k => k.id === template.kandang_id)?.name || 'Unknown'} · {template.tasks?.length || 0} tasks
+                      {template.title.split(' ')[0]} {template.title.includes('Routine') ? 'Rutin' : ''} · {farms.find(f => f.id === template.farm_id)?.name?.replace('Kandang ', '') || 'Unknown'} · {farms.flatMap(f => f.kandang || []).find(k => k.id === template.kandang_id)?.name || 'Unknown'} · {template.tasks?.length || 0} tugas
                     </span>
                   </div>
                   <div style={{ color: selectedTemplate?.id === template.id ? 'var(--primary)' : 'var(--muted-foreground)' }}>
@@ -414,7 +414,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                     cursor: 'pointer',
                   }}
                 >
-                  Start Execution →
+                  Mulai Eksekusi →
                 </button>
               </div>
             )}
@@ -429,11 +429,11 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   onClick={() => setIsExecuting(false)}
                   style={{ background: 'none', border: 'none', color: 'var(--muted-foreground)', fontSize: '0.875rem', cursor: 'pointer', padding: 0, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}
                 >
-                  ← Back
+                  ← Kembali
                 </button>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '0 0 0.25rem 0' }}>{selectedTemplate.title}</h3>
                 <span style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>
-                  {operators.find(o => o.id === selectedOperator)?.name || 'No operator'} · {selectedDate}
+                  {operators.find(o => o.id === selectedOperator)?.name || 'Tanpa operator'} · {selectedDate}
                 </span>
               </div>
               <div style={{ textAlign: 'right' }}>
@@ -441,7 +441,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   {executionTasks.length > 0 ? Math.round((executionTasks.filter(t => t.completed).length / executionTasks.length) * 100) : 0}%
                 </div>
                 <div style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>
-                  {executionTasks.filter(t => t.completed).length}/{executionTasks.length} done
+                  {executionTasks.filter(t => t.completed).length}/{executionTasks.length} selesai
                 </div>
               </div>
             </div>
@@ -475,7 +475,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                         {task.title}
                       </h4>
                       {task.critical && (
-                        <span style={{ padding: '0.1rem 0.4rem', backgroundColor: 'rgba(239, 68, 68, 0.1)', color: 'rgb(239, 68, 68)', borderRadius: '4px', fontSize: '0.65rem', fontWeight: 700 }}>Critical</span>
+                        <span style={{ padding: '0.1rem 0.4rem', backgroundColor: 'rgba(239, 68, 68, 0.1)', color: 'rgb(239, 68, 68)', borderRadius: '4px', fontSize: '0.65rem', fontWeight: 700 }}>Kritis</span>
                       )}
                     </div>
                     <span style={{ fontSize: '0.8125rem', color: 'var(--muted-foreground)' }}>{task.description}</span>
@@ -487,17 +487,17 @@ export function SopTracker({ farms }: SopTrackerProps) {
               ))}
               {executionTasks.length === 0 && (
                 <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--muted-foreground)', fontSize: '0.875rem' }}>
-                  No tasks configured for this template.
+                  Tidak ada tugas yang dikonfigurasi untuk templat ini.
                 </div>
               )}
             </div>
 
             <div style={{ marginBottom: '2rem' }}>
-              <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', marginBottom: '0.5rem', display: 'block' }}>Notes / Remarks (optional)</label>
+              <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', marginBottom: '0.5rem', display: 'block' }}>Catatan / Keterangan (opsional)</label>
               <textarea 
                 value={executionNotes}
                 onChange={(e) => setExecutionNotes(e.target.value)}
-                placeholder="Any observations or notes..."
+                placeholder="Tulis observasi atau catatan di sini..."
                 style={{
                   width: '100%',
                   minHeight: '100px',
@@ -531,13 +531,13 @@ export function SopTracker({ farms }: SopTrackerProps) {
 
                   if (error) throw error;
                   
-                  alert('Checklist Saved!');
+                  alert('Daftar Periksa Disimpan!');
                   setIsExecuting(false);
                   setSelectedTemplate(null);
                   fetchSopData();
                 } catch (err: any) {
                   console.error('Error saving checklist:', err);
-                  alert('Error saving checklist: ' + (err.message || JSON.stringify(err)));
+                  alert('Gagal menyimpan daftar periksa: ' + (err.message || JSON.stringify(err)));
                 }
               }}
               style={{
@@ -557,7 +557,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
               }}
             >
               <FileText size={18} />
-              Save Checklist ({executionTasks.length > 0 ? Math.round((executionTasks.filter(t => t.completed).length / executionTasks.length) * 100) : 0}% Complete)
+              Simpan Daftar Periksa ({executionTasks.length > 0 ? Math.round((executionTasks.filter(t => t.completed).length / executionTasks.length) * 100) : 0}% Selesai)
             </button>
           </div>
         )}
@@ -566,8 +566,8 @@ export function SopTracker({ farms }: SopTrackerProps) {
           <div className="animate-fade-in">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
               <div>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 600, margin: '0 0 0.25rem 0' }}>SOP Templates</h3>
-                <span style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>{templates.length} templates configured</span>
+                <h3 style={{ fontSize: '1.125rem', fontWeight: 600, margin: '0 0 0.25rem 0' }}>Templat SOP</h3>
+                <span style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>{templates.length} templat dikonfigurasi</span>
               </div>
               <button 
                 onClick={() => {
@@ -589,7 +589,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                 }}
               >
                 <Plus size={16} />
-                New Template
+                Templat Baru
               </button>
             </div>
 
@@ -598,7 +598,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                 <div key={template.id} className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', borderTop: '4px solid var(--primary)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <span style={{ padding: '0.2rem 0.5rem', backgroundColor: 'rgba(191, 245, 73, 0.1)', color: 'var(--primary)', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 700 }}>Active</span>
+                      <span style={{ padding: '0.2rem 0.5rem', backgroundColor: 'rgba(191, 245, 73, 0.1)', color: 'var(--primary)', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 700 }}>Aktif</span>
                       <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>{farms.find(f => f.id === template.farm_id)?.name?.replace('Kandang ', '') || 'Unknown'} · {farms.flatMap(f => f.kandang || []).find(k => k.id === template.kandang_id)?.name || 'Unknown'}</span>
                     </div>
                     <div style={{ display: 'flex', gap: '0.5rem', color: 'var(--muted-foreground)' }}>
@@ -621,14 +621,14 @@ export function SopTracker({ farms }: SopTrackerProps) {
                       </button>
                       <button 
                         onClick={async () => {
-                          if (confirm('Are you sure you want to delete this template?')) {
+                          if (confirm('Apakah Anda yakin ingin menghapus templat ini?')) {
                             try {
                               const { error } = await supabase.from('sop_templates').update({ is_active: false }).eq('id', template.id);
                               if (error) throw error;
                               fetchSopData();
                             } catch (err) {
                               console.error(err);
-                              alert('Error deleting template');
+                              alert('Gagal menghapus templat');
                             }
                           }
                         }}
@@ -649,8 +649,8 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   </p>
                   
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
-                    <span style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>{template.tasks?.length || 0} tasks</span>
-                    <button style={{ background: 'none', border: 'none', color: 'var(--muted-foreground)', fontSize: '0.75rem', cursor: 'pointer' }}>Deactivate</button>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>{template.tasks?.length || 0} tugas</span>
+                    <button style={{ background: 'none', border: 'none', color: 'var(--muted-foreground)', fontSize: '0.75rem', cursor: 'pointer' }}>Nonaktifkan</button>
                   </div>
                 </div>
               ))}
@@ -666,10 +666,10 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   onClick={() => setIsBuilding(false)}
                   style={{ background: 'none', border: 'none', color: 'var(--muted-foreground)', cursor: 'pointer', padding: 0 }}
                 >
-                  ← Back
+                  ← Kembali
                 </button>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: 0 }}>
-                  {builderTemplate.id ? 'Edit Template' : 'Create New Template'}
+                  {builderTemplate.id ? 'Edit Templat' : 'Buat Templat Baru'}
                 </h3>
               </div>
               <button 
@@ -696,12 +696,12 @@ export function SopTracker({ farms }: SopTrackerProps) {
                       if (error) throw error;
                     }
                     
-                    alert('Template saved successfully!');
+                    alert('Templat berhasil disimpan!');
                     setIsBuilding(false);
                     fetchSopData();
                   } catch (error: any) {
                     console.error('Save template error:', error);
-                    alert('Error saving template: ' + (error.message || JSON.stringify(error)));
+                    alert('Gagal menyimpan templat: ' + (error.message || JSON.stringify(error)));
                   }
                 }}
                 style={{
@@ -719,14 +719,14 @@ export function SopTracker({ farms }: SopTrackerProps) {
                 }}
               >
                 <FileText size={16} />
-                Save Template
+                Simpan Templat
               </button>
             </div>
 
             <div className="card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div style={{ display: 'flex', gap: '1.5rem' }}>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Template Title</label>
+                  <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Judul Templat</label>
                   <input 
                     type="text" 
                     value={builderTemplate.title}
@@ -735,22 +735,22 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   />
                 </div>
                 <div style={{ width: '200px', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Frequency</label>
+                  <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Frekuensi</label>
                   <select 
                     value={builderTemplate.frequency}
                     onChange={e => setBuilderTemplate({...builderTemplate, frequency: e.target.value})}
                     style={{ padding: '0.75rem 1rem', backgroundColor: '#121212', border: '1px solid var(--border)', borderRadius: '8px', color: 'white' }}
                   >
-                    <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
+                    <option value="daily">Harian</option>
+                    <option value="weekly">Mingguan</option>
+                    <option value="monthly">Bulanan</option>
                   </select>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '1.5rem' }}>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Farm</label>
+                  <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Kandang</label>
                   <select 
                     value={builderTemplate.farm}
                     onChange={e => setBuilderTemplate({...builderTemplate, farm: e.target.value, kandang: ''})}
@@ -761,13 +761,13 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   </select>
                 </div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Kandang</label>
+                  <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Unit</label>
                   <select 
                     value={builderTemplate.kandang}
                     onChange={e => setBuilderTemplate({...builderTemplate, kandang: e.target.value})}
                     style={{ padding: '0.75rem 1rem', backgroundColor: '#121212', border: '1px solid var(--border)', borderRadius: '8px', color: 'white' }}
                   >
-                    <option value="">Select Kandang</option>
+                    <option value="">Pilih Unit</option>
                     {farms.find(f => f.name.includes(builderTemplate.farm))?.kandang?.map((k: any) => (
                       <option key={k.id} value={k.name}>{k.name}</option>
                     ))}
@@ -776,7 +776,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Description</label>
+                <label style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Deskripsi</label>
                 <textarea 
                   value={builderTemplate.description}
                   onChange={e => setBuilderTemplate({...builderTemplate, description: e.target.value})}
@@ -786,7 +786,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
 
               <div style={{ marginTop: '1rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                  <h4 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600 }}>Tasks</h4>
+                  <h4 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600 }}>Tugas</h4>
                   <button 
                     onClick={() => {
                       setBuilderTemplate({
@@ -796,7 +796,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                     }}
                     style={{ padding: '0.5rem 1rem', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', border: 'none', borderRadius: '8px', fontSize: '0.875rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
                   >
-                    <Plus size={14} /> Add Task
+                    <Plus size={14} /> Tambah Tugas
                   </button>
                 </div>
 
@@ -815,7 +815,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                             newTasks[idx].title = e.target.value;
                             setBuilderTemplate({...builderTemplate, tasks: newTasks});
                           }}
-                          placeholder="Task Title"
+                          placeholder="Judul Tugas"
                           style={{ padding: '0.5rem', backgroundColor: 'transparent', border: 'none', borderBottom: '1px solid var(--border)', color: 'white', fontSize: '1rem', fontWeight: 500 }}
                         />
                         <input 
@@ -826,7 +826,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                             newTasks[idx].description = e.target.value;
                             setBuilderTemplate({...builderTemplate, tasks: newTasks});
                           }}
-                          placeholder="Task Description (optional)"
+                          placeholder="Deskripsi Tugas (opsional)"
                           style={{ padding: '0.5rem', backgroundColor: 'transparent', border: 'none', color: 'var(--muted-foreground)', fontSize: '0.875rem' }}
                         />
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -840,7 +840,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                             }}
                             id={`critical-${task.id}`}
                           />
-                          <label htmlFor={`critical-${task.id}`} style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', cursor: 'pointer' }}>Mark as Critical Task</label>
+                          <label htmlFor={`critical-${task.id}`} style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', cursor: 'pointer' }}>Tandai sebagai Tugas Kritis</label>
                         </div>
                       </div>
                       <button 
@@ -857,7 +857,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   ))}
                   {(!builderTemplate.tasks || builderTemplate.tasks.length === 0) && (
                     <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--muted-foreground)', fontSize: '0.875rem', border: '1px dashed var(--border)', borderRadius: '8px' }}>
-                      No tasks added yet. Click "Add Task" to get started.
+                      Belum ada tugas yang ditambahkan. Klik "Tambah Tugas" untuk memulai.
                     </div>
                   )}
                 </div>
@@ -929,48 +929,48 @@ export function SopTracker({ farms }: SopTrackerProps) {
                 value={filterFarm}
                 onChange={e => setFilterFarm(e.target.value)}
                 style={{ padding: '0.5rem 1rem', backgroundColor: '#121212', border: '1px solid var(--border)', borderRadius: '20px', color: 'white', fontSize: '0.875rem', appearance: 'none', paddingRight: '2rem', backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right .7rem top 50%', backgroundSize: '.65rem auto' }}>
-                <option>All Farms</option>
-                <option>BBK</option>
-                <option>JTP</option>
+                <option value="All Farms">Semua Kandang</option>
+                <option value="BBK">BBK</option>
+                <option value="JTP">JTP</option>
               </select>
               <select 
                 value={filterOperator}
                 onChange={e => setFilterOperator(e.target.value)}
                 style={{ padding: '0.5rem 1rem', backgroundColor: '#121212', border: '1px solid var(--border)', borderRadius: '20px', color: 'white', fontSize: '0.875rem', appearance: 'none', paddingRight: '2rem', backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right .7rem top 50%', backgroundSize: '.65rem auto' }}>
-                <option>All Operators</option>
+                <option value="All Operators">Semua Operator</option>
                 {operators.map(op => <option key={op.id}>{op.name}</option>)}
               </select>
               <select 
                 value={filterTimeRange}
                 onChange={e => setFilterTimeRange(e.target.value)}
                 style={{ padding: '0.5rem 1rem', backgroundColor: '#121212', border: '1px solid var(--border)', borderRadius: '20px', color: 'white', fontSize: '0.875rem', appearance: 'none', paddingRight: '2rem', backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right .7rem top 50%', backgroundSize: '.65rem auto' }}>
-                <option>Last 30 days</option>
-                <option>Last 7 days</option>
-                <option>This month</option>
+                <option value="Last 30 days">30 Hari Terakhir</option>
+                <option value="Last 7 days">7 Hari Terakhir</option>
+                <option value="This month">Bulan Ini</option>
               </select>
               
               <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', color: 'var(--muted-foreground)', fontSize: '0.75rem' }}>
-                {perfExecutions.length} executions
+                {perfExecutions.length} eksekusi
               </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
               <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Overall Avg</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Rata-rata Keseluruhan</div>
                 <div style={{ fontSize: '2rem', fontWeight: 700, color: filteredAvgCompletion < 50 ? 'rgb(239, 68, 68)' : filteredAvgCompletion < 80 ? 'rgb(234, 179, 8)' : 'var(--primary)' }}>{filteredAvgCompletion}%</div>
               </div>
               <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Executions</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Eksekusi</div>
                 <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--foreground)' }}>{perfExecutions.length}</div>
               </div>
               <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Perfect (100%)</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>Sempurna (100%)</div>
                 <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--primary)' }}>{perfExecutions.filter(e => e.progress_pct === 100).length}</div>
               </div>
             </div>
 
             <div className="card" style={{ padding: '2rem', marginBottom: '2rem' }}>
-              <h4 style={{ margin: '0 0 1.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Completion Rate Trend</h4>
+              <h4 style={{ margin: '0 0 1.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Tren Tingkat Penyelesaian</h4>
               <div style={{ height: '250px', width: '100%' }}>
                 {trendData.length > 0 ? (
                   <ResponsiveContainer width="100%" height="100%">
@@ -987,14 +987,14 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   </ResponsiveContainer>
                 ) : (
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'var(--muted-foreground)', fontSize: '0.875rem' }}>
-                    No trend data available
+                    Data tren tidak tersedia
                   </div>
                 )}
               </div>
             </div>
 
             <div className="card" style={{ padding: '2rem', marginBottom: '2rem' }}>
-              <h4 style={{ margin: '0 0 1.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Operator Performance</h4>
+              <h4 style={{ margin: '0 0 1.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Performa Operator</h4>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {operators.filter(op => filterOperator === 'All Operators' || op.name === filterOperator).map((op, idx) => {
@@ -1011,11 +1011,11 @@ export function SopTracker({ farms }: SopTrackerProps) {
                         <div style={{ width: `${avg}%`, height: '100%', backgroundColor: barColor }} />
                       </div>
                       <div style={{ width: '100px', textAlign: 'right', fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>
-                        {runs} runs <span style={{ color: barColor, fontWeight: 700, marginLeft: '0.5rem' }}>{avg}%</span>
+                        {runs} kali <span style={{ color: barColor, fontWeight: 700, marginLeft: '0.5rem' }}>{avg}%</span>
                       </div>
                       <button 
                         onClick={async () => {
-                          if (window.confirm(`Are you sure you want to delete operator ${op.name}?`)) {
+                          if (window.confirm(`Apakah Anda yakin ingin menghapus operator ${op.name}?`)) {
                             const { error } = await supabase.from('operators').update({ is_active: false }).eq('id', op.id);
                             if (error) {
                               alert('Error deleting operator: ' + error.message);
@@ -1025,7 +1025,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                           }
                         }}
                         style={{ background: 'none', border: 'none', color: 'var(--muted-foreground)', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: '0.5rem' }}
-                        title="Delete Operator"
+                        title="Hapus Operator"
                       >
                         <Trash2 size={16} />
                       </button>
@@ -1033,13 +1033,13 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   );
                 })}
                 {operators.length === 0 && (
-                  <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', textAlign: 'center' }}>No operators data.</div>
+                  <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', textAlign: 'center' }}>Tidak ada data operator.</div>
                 )}
               </div>
             </div>
 
             <div className="card" style={{ padding: '2rem' }}>
-              <h4 style={{ margin: '0 0 1.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Avg Completion by SOP</h4>
+              <h4 style={{ margin: '0 0 1.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Rata-rata Penyelesaian per SOP</h4>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {templates.map(template => {
@@ -1061,7 +1061,7 @@ export function SopTracker({ farms }: SopTrackerProps) {
                   );
                 })}
                 {templates.length === 0 && (
-                  <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', textAlign: 'center' }}>No templates data.</div>
+                  <div style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', textAlign: 'center' }}>Tidak ada data templat.</div>
                 )}
                 
                 {/* X-axis labels */}

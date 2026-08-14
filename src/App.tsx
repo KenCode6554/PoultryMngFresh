@@ -1047,18 +1047,18 @@ export default function App() {
 
           {/* Navigation */}
           <nav style={{ padding: '1rem', flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem', overflowY: 'auto', overflowX: 'hidden' }}>
-             <NavItem icon={<Layers size={20} />} label="Overview" active={activeTab === 'overview'} onClick={() => setActiveTab('overview')} collapsed={!isSidebarOpen} />
-             <NavItem icon={<Activity size={20} />} label="Infrastructure" active={activeTab === 'farms'} onClick={() => setActiveTab('farms')} collapsed={!isSidebarOpen} />
-             <NavItem icon={<AlertTriangle size={20} />} label="Diagnostics" active={activeTab === 'gaps'} onClick={() => setActiveTab('gaps')} collapsed={!isSidebarOpen} />
-             <NavItem icon={<TrendingDown size={20} />} label="Deep Metrics" active={activeTab === 'analytics'} onClick={() => setActiveTab('analytics')} collapsed={!isSidebarOpen} />
-             <NavItem icon={<Columns2 size={20} />} label="Comparison" active={activeTab === 'comparison'} onClick={() => setActiveTab('comparison')} collapsed={!isSidebarOpen} />
-             <NavItem icon={<ClipboardCheck size={20} />} label="SOP Tracker" active={activeTab === 'sop'} onClick={() => setActiveTab('sop')} collapsed={!isSidebarOpen} />
-             <NavItem icon={<MessageSquare size={20} />} label="AI Assistant" active={activeTab === 'ai'} onClick={() => setActiveTab('ai')} collapsed={!isSidebarOpen} />
+             <NavItem icon={<Layers size={20} />} label="Ringkasan" active={activeTab === 'overview'} onClick={() => setActiveTab('overview')} collapsed={!isSidebarOpen} />
+             <NavItem icon={<Activity size={20} />} label="Infrastruktur" active={activeTab === 'farms'} onClick={() => setActiveTab('farms')} collapsed={!isSidebarOpen} />
+             <NavItem icon={<AlertTriangle size={20} />} label="Diagnostik" active={activeTab === 'gaps'} onClick={() => setActiveTab('gaps')} collapsed={!isSidebarOpen} />
+             <NavItem icon={<TrendingDown size={20} />} label="Metrik Mendalam" active={activeTab === 'analytics'} onClick={() => setActiveTab('analytics')} collapsed={!isSidebarOpen} />
+             <NavItem icon={<Columns2 size={20} />} label="Perbandingan" active={activeTab === 'comparison'} onClick={() => setActiveTab('comparison')} collapsed={!isSidebarOpen} />
+             <NavItem icon={<ClipboardCheck size={20} />} label="Pelacak SOP" active={activeTab === 'sop'} onClick={() => setActiveTab('sop')} collapsed={!isSidebarOpen} />
+             <NavItem icon={<MessageSquare size={20} />} label="Asisten AI" active={activeTab === 'ai'} onClick={() => setActiveTab('ai')} collapsed={!isSidebarOpen} />
              
              <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
                <NavItem 
                  icon={<LogOut size={20} color="var(--destructive)" />} 
-                 label="Log Out" 
+                 label="Keluar" 
                  active={false} 
                  onClick={async () => { await supabase.auth.signOut(); setSession(null); }} 
                  collapsed={!isSidebarOpen} 
@@ -1074,19 +1074,19 @@ export default function App() {
               <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem' }}>
                 <div>
                   <h2 style={{ fontSize: '1.875rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-                    {activeTab === 'overview' ? 'Executive Dashboard' :
-                      activeTab === 'farms' ? 'Farm Management' :
-                        activeTab === 'gaps' ? 'Performance Alerts' :
-                          activeTab === 'comparison' ? 'Unit Comparison' :
-                            activeTab === 'ai' ? 'Intelligence Hub' : 'Production Analytics'}
+                    {activeTab === 'overview' ? 'Dasbor Eksekutif' :
+                      activeTab === 'farms' ? 'Manajemen Peternakan' :
+                        activeTab === 'gaps' ? 'Peringatan Performa' :
+                          activeTab === 'comparison' ? 'Perbandingan Unit' :
+                            activeTab === 'ai' ? 'Pusat Kecerdasan' : 'Analisis Produksi'}
 
                   </h2>
                   <p style={{ color: 'var(--muted-foreground)' }}>
-                    {activeTab === 'overview' ? 'Real-time production intelligence and gap analysis.' :
-                      activeTab === 'farms' ? 'Inventory and population per kandang unit.' :
+                    {activeTab === 'overview' ? 'Kecerdasan produksi real-time dan analisis gap.' :
+                      activeTab === 'farms' ? 'Inventaris dan populasi per unit kandang.' :
                         activeTab === 'gaps' ? '' :
-                          activeTab === 'comparison' ? 'Side-by-side production analysis.' :
-                            activeTab === 'ai' ? 'Advanced multi-modal model for farm insights.' : 'Statistical models and trend forecasting.'}
+                          activeTab === 'comparison' ? 'Analisis produksi berdampingan.' :
+                            activeTab === 'ai' ? 'Model multi-modal canggih untuk wawasan peternakan.' : 'Model statistik dan prakiraan tren.'}
 
                   </p>
                 </div>
