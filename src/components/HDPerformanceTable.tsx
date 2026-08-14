@@ -163,7 +163,7 @@ export function HDPerformanceTable({ farms }: HDPerformanceTableProps) {
       <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border)' }}>
         <h3 style={{ fontSize: '1.125rem', fontWeight: 600, margin: 0 }}>HD Performance History</h3>
         <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', margin: '0.25rem 0 0 0' }}>
-          Overview of Hen Day production (weekly and daily). Values dropping $\ge$ 1% from the previous period are highlighted in red.
+          Overview of Hen Day production (weekly and daily). Values dropping ≥ 1% from the previous period are highlighted in red.
         </p>
       </div>
       
